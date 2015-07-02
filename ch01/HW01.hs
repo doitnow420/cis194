@@ -14,7 +14,9 @@ dropLastDigit x = x `div` 10
 -- Exercise 2 -----------------------------------------
 
 toRevDigits :: Integer -> [Integer]
-toRevDigits x = [lastDigit x, toRevDigits dropLastDigit x]
+toRevDigits n
+  | n <= 0    = []
+  | otherwise = lastDigit n : toRevDigits (dropLastDigit n)
 
 -- Exercise 3 -----------------------------------------
 
