@@ -26,11 +26,12 @@ ex1Tests = [ Test "lastDigit test" testLastDigit
 
 testToRevDigits :: (Integer,[Integer]) -> Bool
 testToRevDigits (n,[]) = toRevDigits n == []
-testToRevDigits (n,[xs]) = toRevDigits n == [xs]
+testToRevDigits (n,[x]) = toRevDigits n == [x]
+testToRevDigits (n,(x:xs)) = toRevDigits n == (x:xs)
 
 ex2Tests :: [Test]
 ex2Tests = [ Test "toRevDigits test" testToRevDigits
-             [(1234,[4,3,2,1]), (0,[]),  (123,[3,2])]
+             [(1234,[4,3,2,1]), (0,[]),  (123,[3,2,1])]
            ]
 
 -- Exercise 3 -----------------------------------------
